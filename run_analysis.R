@@ -38,7 +38,9 @@ colnames(data) <- gsub("[-()]", "", tolower(colnames(data)))
 data <- arrange(data, subject)
 
 # create second dataset
-data2 <- data %>% group_by(subject, activity) %>% summarise_all(mean)
+data2 <- data %>% group_by(subject, activity) %>% summarise_all(mean) %>%
+  rename_with(function(x) { paste0(x, "mean") }, -(subject:activity))
+
 
 # create second dataset file
 write.table(data2, "tidydata.txt", row.names = FALSE)
