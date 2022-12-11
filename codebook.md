@@ -1,4 +1,6 @@
-The codebook for the original data, "features.txt", can be found in the original dataset. In this dataset:
+The codebook for the original data, "features.txt", can be found in the original dataset at "http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones".
+
+In this modified dataset:
 
 subject - identifies the subject who performed the activity
 activity - the activity that was performed while this data was collected
