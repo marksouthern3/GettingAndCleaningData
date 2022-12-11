@@ -7,11 +7,11 @@ X_test <- read.table("UCI HAR Dataset/test/X_test.txt")
 colnames(X_test) <- features
 X_test <- X_test[, meanandstd]  # extract only mean and std
 y_test <- read.table("UCI HAR Dataset/test/y_test.txt")
-colnames(y_test) <- "Activity"
-y_test$Activity <- as.factor(y_test$Activity)
-levels(y_test$Activity) <- activity_labels
+colnames(y_test) <- "activity"
+y_test$activity <- as.factor(y_test$activity)
+levels(y_test$activity) <- activity_labels
 subject_test <- read.table("UCI HAR Dataset/test/subject_test.txt")
-colnames(subject_test) <- "Subject"
+colnames(subject_test) <- "subject"
 test <- cbind(subject_test, y_test, X_test)
 
 # load training dataset
@@ -19,11 +19,11 @@ X_train <- read.table("UCI HAR Dataset/train/X_train.txt")
 colnames(X_train) <- features
 X_train <- X_train[, meanandstd]  # extract only mean and std
 y_train <- read.table("UCI HAR Dataset/train/y_train.txt")
-colnames(y_train) <- "Activity"
-y_train$Activity <- as.factor(y_train$Activity)
-levels(y_train$Activity) <- activity_labels
+colnames(y_train) <- "activity"
+y_train$activity <- as.factor(y_train$activity)
+levels(y_train$activity) <- activity_labels
 subject_train <- read.table("UCI HAR Dataset/train/subject_train.txt")
-colnames(subject_train) <- "Subject"
+colnames(subject_train) <- "aubject"
 train <- cbind(subject_train, y_train, X_train)
 
 # merge test and training datasets
