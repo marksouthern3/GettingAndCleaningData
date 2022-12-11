@@ -31,17 +31,14 @@ train <- cbind(subject_train, y_train, X_train)
 # merge test and training datasets
 data <- rbind(test, train)
 
-# tidy data 
+# tidy data up a bit
 # make variable names lowercase, remove -,(,)
 colnames(data) <- gsub("[-()]", "", tolower(colnames(data)))
 # arrange data by subject
 data <- arrange(data, subject)
 
-# create dataset file
-write.table(data, "tidydata.txt", row.names = FALSE)
-
 # create second dataset
 data2 <- data %>% group_by(subject, activity) %>% summarise_all(mean)
 
 # create second dataset file
-write.table(data2, "tidydata2.txt", row.names = FALSE)
+write.table(data2, "tidydata.txt", row.names = FALSE)
