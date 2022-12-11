@@ -34,9 +34,6 @@ data <- rbind(test, train)
 # tidy data up a bit
 # make variable names lowercase, remove -,(,)
 colnames(data) <- gsub("[-()]", "", tolower(colnames(data)))
-# sub t and f for timedomain and freqdomain
-colnames(data) <- sub("^t", "timedomain", colnames(data))
-colnames(data) <- sub("^f", "freqdomain", colnames(data))
 # arrange data by subject
 data <- arrange(data, subject)
 
