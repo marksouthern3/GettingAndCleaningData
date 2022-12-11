@@ -23,8 +23,11 @@ colnames(y_train) <- "activity"
 y_train$activity <- as.factor(y_train$activity)
 levels(y_train$activity) <- activity_labels
 subject_train <- read.table("UCI HAR Dataset/train/subject_train.txt")
-colnames(subject_train) <- "aubject"
+colnames(subject_train) <- "subject"
 train <- cbind(subject_train, y_train, X_train)
 
 # merge test and training datasets
 data <- rbind(test, train)
+
+# tidy variable names (make lowercase, remove -,(,))
+colnames(data) <- gsub("[-()]", "", tolower(colnames(data)))  
