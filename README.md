@@ -1,1 +1,3 @@
-# GettingAndCleaningData
+In order to produce the tidy dataset ("tidydata.txt"), run the run_analysis.R script using R version 4.2.2 with the dplyr package version 1.0.10 loaded. For the script to run correctly, the original "Human Activity Recognition Using Smartphones" dataset that can be found at "http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones" should be present in a directory called "UCI HAR Dataset" in the current working directory.
+
+The script merges the test and training datasets, extracts only the mean and standard deviations of each measurement, and calculates an average of these variables for a given test subject and activity. This is the data that is output in "tidydata.txt".
