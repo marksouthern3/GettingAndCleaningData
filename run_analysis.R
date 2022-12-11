@@ -1,5 +1,5 @@
 features <- read.table("UCI HAR Dataset/features.txt")[, 2]
-meanandstd <- grep("mean|std", features)
+meanandstd <- grep("mean\\(\\)|std\\(\\)", features)
 activity_labels <- read.table("UCI HAR Dataset/activity_labels.txt")[, 2]
 
 # load test dataset
